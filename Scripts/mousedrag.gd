@@ -1,8 +1,15 @@
 extends StaticBody2D
 
-
+# Variable para retener el reposicionamiento cuando coges la carta
 var xlock = true
+# Altura a la que se encuentra la mano
 var ypos = 599
+# Variable para guardar la posicion de la mano de cada carta
+var myhandpos = 0
+# Determina si la carta ya ha sido colocada o no
+var colocada = false
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -21,15 +28,18 @@ func _process(delta):
 		position.y = ypos
 		scale.x = 1
 		scale.y = 1
-	
-
-
-
-
-func _on_zona_mano_ordenar_cartas(posiciones , possize):
+		
 	if (xlock == true):
-		for n in possize:
-			print("Mi posicion:",position.x," Posicion de la mano: ", posiciones[n])
-			if (position.x != posiciones[n]):
-				position.x = posiciones[n]
-			
+		for n in get_node("%ZonaMano").possize:
+			if (position.x != get_node("%ZonaMano").vectorPosiciones[n].xposition and get_node("%ZonaMano").vectorPosiciones[n].ocupado == false and colocada == false):
+				myhandpos = get_node("%ZonaMano").vectorPosiciones[n].xposition
+				get_node("%ZonaMano").vectorPosiciones[n].ocupado = true
+				colocada = true
+				
+		position.x = myhandpos
+
+
+
+
+
+	

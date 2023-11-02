@@ -1,16 +1,18 @@
 extends Area2D
 
-var manoxposition = position.x
 
-var vectorPosiciones = [manoxposition, manoxposition + 50]
+var vectorPosiciones = [{"xposition": position.x,"ocupado": false,}, {"xposition": position.x,"ocupado": false,}]
 var possize = vectorPosiciones.size()
-signal ordenar_Cartas(vectorPosiciones, possize)
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
+
+func _ready():
+	for n in possize:
+		vectorPosiciones[n].xposition = vectorPosiciones[n].xposition + (100*n)
+		print(vectorPosiciones[n].xposition)
+	print(vectorPosiciones[0].xposition)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	ordenar_Cartas.emit(vectorPosiciones, possize)
+	# Actualizo el tamaño del vector en caso de que se creen cartas nuevas
 	possize = vectorPosiciones.size()
+	
