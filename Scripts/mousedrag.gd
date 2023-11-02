@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var clicked = false
+
 var xlock = true
 var ypos = 599
 # Called when the node enters the scene tree for the first time.
@@ -17,7 +17,7 @@ func _process(delta):
 				scale.x = 1.2
 				scale.y = 1.2
 	else:
-		
+		xlock = true
 		position.y = ypos
 		scale.x = 1
 		scale.y = 1
@@ -27,9 +27,9 @@ func _process(delta):
 
 
 func _on_zona_mano_ordenar_cartas(posiciones , possize):
-	print("Señal de posicion recibida")
 	if (xlock == true):
 		for n in possize:
+			print("Mi posicion:",position.x," Posicion de la mano: ", posiciones[n])
 			if (position.x != posiciones[n]):
 				position.x = posiciones[n]
 			

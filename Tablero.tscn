@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://s2lvrudyiweo"]
+[gd_scene load_steps=7 format=3 uid="uid://s2lvrudyiweo"]
 
 [ext_resource type="Texture2D" uid="uid://dyxmyxyu1u80" path="res://Assets tablero/Tableroboceto.png" id="1_pv7lr"]
 [ext_resource type="Texture2D" uid="uid://4f4vw0nambbn" path="res://Assets cartas/artwork.png" id="2_cu1hy"]
 [ext_resource type="Script" path="res://Scripts/mousedrag.gd" id="2_dojjv"]
+[ext_resource type="Texture2D" uid="uid://ci3vvdy20m25n" path="res://icon.svg" id="4_hhoay"]
 [ext_resource type="PackedScene" uid="uid://r1u135485j7q" path="res://zona_mano.tscn" id="4_k5mrf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n12hp"]
@@ -26,17 +27,18 @@ shape = SubResource("RectangleShape2D_n12hp")
 scale = Vector2(0.094, 0.094)
 texture = ExtResource("2_cu1hy")
 
-[node name="ZonaMano" parent="." instance=ExtResource("4_k5mrf")]
-
 [node name="Carta2" type="StaticBody2D" parent="."]
-position = Vector2(267, 409)
+position = Vector2(630, 381)
 script = ExtResource("2_dojjv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Carta2"]
 shape = SubResource("RectangleShape2D_n12hp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Carta2"]
-scale = Vector2(0.094, 0.094)
-texture = ExtResource("2_cu1hy")
+position = Vector2(1.49999, -4.00001)
+scale = Vector2(0.539062, 0.609375)
+texture = ExtResource("4_hhoay")
+
+[node name="ZonaMano" parent="." instance=ExtResource("4_k5mrf")]
 
 [connection signal="ordenar_Cartas" from="ZonaMano" to="Carta" method="_on_zona_mano_ordenar_cartas"]
