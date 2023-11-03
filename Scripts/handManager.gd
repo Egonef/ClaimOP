@@ -1,7 +1,7 @@
 extends Area2D
 
 
-var vectorPosiciones = [{"xposition": position.x,"ocupado": false,}, {"xposition": position.x,"ocupado": false,}]
+var vectorPosiciones = []
 var possize = vectorPosiciones.size()
 
 

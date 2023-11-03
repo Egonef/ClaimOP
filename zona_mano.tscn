@@ -6,9 +6,9 @@
 size = Vector2(586, 83)
 
 [node name="ZonaMano" type="Area2D"]
-position = Vector2(605, 595)
+position = Vector2(323, 594)
 script = ExtResource("1_qs2jt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 9.5)
+position = Vector2(286, 4)
 shape = SubResource("RectangleShape2D_r3ls2")
