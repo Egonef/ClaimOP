@@ -17,7 +17,7 @@ scale = Vector2(0.328392, 0.26129)
 texture = ExtResource("1_pv7lr")
 
 [node name="Carta" type="StaticBody2D" parent="."]
-position = Vector2(175, 210)
+position = Vector2(266, 215)
 script = ExtResource("2_dojjv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Carta"]
@@ -28,7 +28,7 @@ scale = Vector2(0.094, 0.094)
 texture = ExtResource("2_cu1hy")
 
 [node name="Carta4" type="StaticBody2D" parent="."]
-position = Vector2(430, 189)
+position = Vector2(660, 265)
 script = ExtResource("2_dojjv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Carta4"]
@@ -39,7 +39,7 @@ scale = Vector2(0.094, 0.094)
 texture = ExtResource("2_cu1hy")
 
 [node name="Carta3" type="StaticBody2D" parent="."]
-position = Vector2(453, 324)
+position = Vector2(910, 319)
 script = ExtResource("2_dojjv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Carta3"]
@@ -50,7 +50,7 @@ scale = Vector2(0.094, 0.094)
 texture = ExtResource("2_cu1hy")
 
 [node name="Carta2" type="StaticBody2D" parent="."]
-position = Vector2(116, 381)
+position = Vector2(92, 401)
 script = ExtResource("2_dojjv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Carta2"]
@@ -64,3 +64,5 @@ texture = ExtResource("4_hhoay")
 [node name="ZonaMano" parent="." instance=ExtResource("4_k5mrf")]
 unique_name_in_owner = true
 position = Vector2(324, 594)
+
+[connection signal="locatespot" from="Carta" to="ZonaMano" method="_on_carta_locatespot"]
