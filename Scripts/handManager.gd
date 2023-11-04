@@ -6,17 +6,19 @@ var possize = vectorPosiciones.size()
 
 
 func _ready():
-	pass
+	GlobalSignals.locatespot.connect(on_locatespot)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# Actualizo el tamaño del vector en caso de que se creen cartas nuevas
-	possize = vectorPosiciones.size()
+	pass
 	
 
 
-func _on_carta_locatespot():
+func on_locatespot():
 	print("Señal recibida")
+	possize = vectorPosiciones.size()
+	print(possize)
 	for n in possize:
 		vectorPosiciones[n].xposition = vectorPosiciones[n].xposition + (100*n)
 		print(vectorPosiciones[n].xposition)

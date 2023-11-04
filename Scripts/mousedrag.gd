@@ -9,12 +9,13 @@ var myhandpos = 0
 # Determina si la carta ya ha sido colocada o no
 var colocada = false
 
-signal locatespot()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("%ZonaMano").vectorPosiciones.append({"xposition": position.x,"ocupado": false,})
-	locatespot.emit()
+	print("Hueco en el vector añadido")
+	GlobalSignals.locatespot.emit()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

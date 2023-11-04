@@ -16,6 +16,10 @@ position = Vector2(576, 324)
 scale = Vector2(0.328392, 0.26129)
 texture = ExtResource("1_pv7lr")
 
+[node name="ZonaMano" parent="." instance=ExtResource("4_k5mrf")]
+unique_name_in_owner = true
+position = Vector2(324, 594)
+
 [node name="Carta" type="StaticBody2D" parent="."]
 position = Vector2(266, 215)
 script = ExtResource("2_dojjv")
@@ -60,9 +64,3 @@ shape = SubResource("RectangleShape2D_n12hp")
 position = Vector2(1.49999, -4.00001)
 scale = Vector2(0.539062, 0.609375)
 texture = ExtResource("4_hhoay")
-
-[node name="ZonaMano" parent="." instance=ExtResource("4_k5mrf")]
-unique_name_in_owner = true
-position = Vector2(324, 594)
-
-[connection signal="locatespot" from="Carta" to="ZonaMano" method="_on_carta_locatespot"]
