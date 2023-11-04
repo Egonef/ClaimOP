@@ -3,7 +3,7 @@ extends Area2D
 
 var vectorPosiciones = []
 var possize = vectorPosiciones.size()
-
+var cont = 0
 
 func _ready():
 	GlobalSignals.locatespot.connect(on_locatespot)
@@ -19,9 +19,15 @@ func on_locatespot():
 	print("Señal recibida")
 	possize = vectorPosiciones.size()
 	print(possize)
-	for n in possize:
-		vectorPosiciones[n].xposition = vectorPosiciones[n].xposition + (100*n)
-		print(vectorPosiciones[n].xposition)
-	print(vectorPosiciones[0].xposition)
+	if (cont < possize):
+		if (cont == 0):
+			vectorPosiciones[cont].xposition = vectorPosiciones[cont].xposition
+			cont = cont + 1
+		else:
+			vectorPosiciones[cont].xposition = vectorPosiciones[cont-1].xposition + 65
+			print(vectorPosiciones[cont].xposition)
+			cont = cont + 1
+			print("Valor de cont: ",cont)
+
 
 

@@ -31,6 +31,72 @@ shape = SubResource("RectangleShape2D_n12hp")
 scale = Vector2(0.094, 0.094)
 texture = ExtResource("2_cu1hy")
 
+[node name="Carta10" type="StaticBody2D" parent="."]
+position = Vector2(266, 215)
+script = ExtResource("2_dojjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carta10"]
+shape = SubResource("RectangleShape2D_n12hp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Carta10"]
+scale = Vector2(0.094, 0.094)
+texture = ExtResource("2_cu1hy")
+
+[node name="Carta9" type="StaticBody2D" parent="."]
+position = Vector2(266, 215)
+script = ExtResource("2_dojjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carta9"]
+shape = SubResource("RectangleShape2D_n12hp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Carta9"]
+scale = Vector2(0.094, 0.094)
+texture = ExtResource("2_cu1hy")
+
+[node name="Carta8" type="StaticBody2D" parent="."]
+position = Vector2(266, 215)
+script = ExtResource("2_dojjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carta8"]
+shape = SubResource("RectangleShape2D_n12hp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Carta8"]
+scale = Vector2(0.094, 0.094)
+texture = ExtResource("2_cu1hy")
+
+[node name="Carta7" type="StaticBody2D" parent="."]
+position = Vector2(266, 215)
+script = ExtResource("2_dojjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carta7"]
+shape = SubResource("RectangleShape2D_n12hp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Carta7"]
+scale = Vector2(0.094, 0.094)
+texture = ExtResource("2_cu1hy")
+
+[node name="Carta6" type="StaticBody2D" parent="."]
+position = Vector2(266, 215)
+script = ExtResource("2_dojjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carta6"]
+shape = SubResource("RectangleShape2D_n12hp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Carta6"]
+scale = Vector2(0.094, 0.094)
+texture = ExtResource("2_cu1hy")
+
+[node name="Carta5" type="StaticBody2D" parent="."]
+position = Vector2(266, 215)
+script = ExtResource("2_dojjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carta5"]
+shape = SubResource("RectangleShape2D_n12hp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Carta5"]
+scale = Vector2(0.094, 0.094)
+texture = ExtResource("2_cu1hy")
+
 [node name="Carta4" type="StaticBody2D" parent="."]
 position = Vector2(660, 265)
 script = ExtResource("2_dojjv")
