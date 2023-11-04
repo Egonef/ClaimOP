@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://s2lvrudyiweo"]
+
+[ext_resource type="Texture2D" uid="uid://dyxmyxyu1u80" path="res://Assets tablero/Tableroboceto.png" id="1_1vuxg"]
+[ext_resource type="Script" path="res://Scripts/crearCartasAMano.gd" id="1_q3mt7"]
+[ext_resource type="PackedScene" uid="uid://r1u135485j7q" path="res://Escenas/zona_mano.tscn" id="2_hqu3n"]
+[ext_resource type="PackedScene" uid="uid://bvqglyljf5v1" path="res://Escenas/carta.tscn" id="3_ta58p"]
+
+[node name="Tablero" type="Node2D"]
+script = ExtResource("1_q3mt7")
+
+[node name="ZonaMano" parent="." instance=ExtResource("2_hqu3n")]
+position = Vector2(181, 589)
+
+[node name="dibujotablero" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.328392, 0.26129)
+texture = ExtResource("1_1vuxg")
+
+[node name="Carta" parent="." instance=ExtResource("3_ta58p")]
+
+[node name="Carta2" parent="." instance=ExtResource("3_ta58p")]
+position = Vector2(532, 311)

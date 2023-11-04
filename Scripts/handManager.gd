@@ -5,6 +5,8 @@ var vectorPosiciones = []
 var possize = vectorPosiciones.size()
 var cont = 0
 
+
+
 func _ready():
 	GlobalSignals.locatespot.connect(on_locatespot)
 
@@ -16,18 +18,14 @@ func _process(delta):
 
 
 func on_locatespot():
-	print("Señal recibida")
 	possize = vectorPosiciones.size()
-	print(possize)
 	if (cont < possize):
 		if (cont == 0):
 			vectorPosiciones[cont].xposition = vectorPosiciones[cont].xposition
 			cont = cont + 1
 		else:
 			vectorPosiciones[cont].xposition = vectorPosiciones[cont-1].xposition + 65
-			print(vectorPosiciones[cont].xposition)
 			cont = cont + 1
-			print("Valor de cont: ",cont)
 
 
 
