@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ctov61bu5o1e4" path="res://Sprites general/Hoguera.jpg" id="6_fhbt1"]
 [ext_resource type="Texture2D" uid="uid://dg06p4mr65w8o" path="res://Sprites general/Humo.jpg" id="7_t0omf"]
 
-[sub_resource type="Curve" id="Curve_pu0dm"]
+[sub_resource type="Curve" id="Curve_a6bqe"]
 min_value = -360.0
 max_value = 360.0
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -35,14 +35,21 @@ position = Vector2(404, -43)
 texture = ExtResource("5_5tmcr")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Goblin0"]
-position = Vector2(158, -20)
 amount = 1
 local_coords = true
 texture = ExtResource("5_5tmcr")
-direction = Vector2(-1, 0)
-spread = 40.0
-gravity = Vector2(0, -900)
-angular_velocity_curve = SubResource("Curve_pu0dm")
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 213.82
+initial_velocity_max = 538.6
+angular_velocity_min = 101.82
+angular_velocity_max = 101.82
+angular_velocity_curve = SubResource("Curve_a6bqe")
+tangential_accel_min = 2.02
+tangential_accel_max = 65.66
+scale_amount_min = 0.0
+scale_amount_max = 0.0
 
 [node name="Hoguera" type="Sprite2D" parent="."]
 position = Vector2(791, 251)
