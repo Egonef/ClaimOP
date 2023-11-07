@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://s2lvrudyiweo"]
+[gd_scene load_steps=9 format=3 uid="uid://s2lvrudyiweo"]
 
 [ext_resource type="Texture2D" uid="uid://dyxmyxyu1u80" path="res://Assets tablero/Tableroboceto.png" id="1_1vuxg"]
 [ext_resource type="Script" path="res://Scripts/crearCartasAMano.gd" id="1_q3mt7"]
 [ext_resource type="PackedScene" uid="uid://r1u135485j7q" path="res://Escenas/zona_mano.tscn" id="2_hqu3n"]
 [ext_resource type="PackedScene" uid="uid://bvqglyljf5v1" path="res://Escenas/carta.tscn" id="3_ta58p"]
+[ext_resource type="Texture2D" uid="uid://do7b8nbnkk7sk" path="res://Sprites general/Goblin 0.jpg" id="5_5tmcr"]
+[ext_resource type="Texture2D" uid="uid://ctov61bu5o1e4" path="res://Sprites general/Hoguera.jpg" id="6_fhbt1"]
+[ext_resource type="Texture2D" uid="uid://dg06p4mr65w8o" path="res://Sprites general/Humo.jpg" id="7_t0omf"]
+
+[sub_resource type="Curve" id="Curve_pu0dm"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Tablero" type="Node2D"]
 script = ExtResource("1_q3mt7")
@@ -20,3 +29,30 @@ texture = ExtResource("1_1vuxg")
 
 [node name="Carta2" parent="." instance=ExtResource("3_ta58p")]
 position = Vector2(532, 311)
+
+[node name="Goblin0" type="Sprite2D" parent="."]
+position = Vector2(404, -43)
+texture = ExtResource("5_5tmcr")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Goblin0"]
+position = Vector2(158, -20)
+amount = 1
+local_coords = true
+texture = ExtResource("5_5tmcr")
+direction = Vector2(-1, 0)
+spread = 40.0
+gravity = Vector2(0, -900)
+angular_velocity_curve = SubResource("Curve_pu0dm")
+
+[node name="Hoguera" type="Sprite2D" parent="."]
+position = Vector2(791, 251)
+texture = ExtResource("6_fhbt1")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Hoguera"]
+position = Vector2(0, -23)
+amount = 1
+texture = ExtResource("7_t0omf")
+gravity = Vector2(0, -100)
+
+[node name="Humo" type="Sprite2D" parent="."]
+position = Vector2(648, -129)
