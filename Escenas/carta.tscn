@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvqglyljf5v1"]
 
 [ext_resource type="Script" path="res://Scripts/mousedrag.gd" id="1_3u2sj"]
-[ext_resource type="Texture2D" uid="uid://4f4vw0nambbn" path="res://Assets cartas/artwork.png" id="2_qd2xg"]
+[ext_resource type="Texture2D" uid="uid://b01rfxbudom2g" path="res://Sprites general/Reverso.png" id="2_1lb5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n12hp"]
 size = Vector2(60.5, 78.5)
@@ -13,6 +13,7 @@ script = ExtResource("1_3u2sj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n12hp")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.094, 0.094)
-texture = ExtResource("2_qd2xg")
+[node name="Reverso" type="Sprite2D" parent="."]
+position = Vector2(0.500004, 0.500008)
+scale = Vector2(1.20313, 1.26562)
+texture = ExtResource("2_1lb5x")
