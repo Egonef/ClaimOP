@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://s2lvrudyiweo"]
+[gd_scene load_steps=14 format=3 uid="uid://s2lvrudyiweo"]
 
 [ext_resource type="Script" path="res://Scripts/crearCartasAMano.gd" id="1_q3mt7"]
 [ext_resource type="PackedScene" uid="uid://r1u135485j7q" path="res://Escenas/zona_mano.tscn" id="2_hqu3n"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bejukml403flg" path="res://Sprites general/Hoguera2.png" id="7_5chxj"]
 [ext_resource type="Texture2D" uid="uid://ccww3mddhk82" path="res://Sprites general/Chispas.png" id="8_bc57f"]
 [ext_resource type="Texture2D" uid="uid://bk012726ggr5o" path="res://Sprites general/Cabaña fuego x derecha.png" id="8_jj13f"]
+[ext_resource type="Texture2D" uid="uid://bhb3h8imnf8rf" path="res://Sprites general/Cabaña fuego2 x izquierda.png" id="9_4rc15"]
 [ext_resource type="Texture2D" uid="uid://bwl7v57vmvl01" path="res://Sprites general/Humo2.png" id="9_a0one"]
+[ext_resource type="Texture2D" uid="uid://dpd3dk8j41275" path="res://Sprites general/Cabaña fuego3 x arriba.png" id="10_sxdod"]
 
 [sub_resource type="Curve" id="Curve_h0tt4"]
 min_value = 1.0
@@ -40,7 +42,7 @@ texture = ExtResource("3_7xbuj")
 position = Vector2(532, 311)
 
 [node name="Hoguera2" type="Sprite2D" parent="."]
-position = Vector2(134, 501)
+position = Vector2(140, 493)
 scale = Vector2(2, 2)
 texture = ExtResource("7_5chxj")
 
@@ -75,6 +77,16 @@ scale_amount_max = 3.0
 color_ramp = SubResource("Gradient_0bhxw")
 
 [node name="CabañaFuegoXDerecha" type="Sprite2D" parent="."]
-position = Vector2(53.6875, 484.813)
+position = Vector2(49, 447)
 scale = Vector2(3.895, 4.625)
 texture = ExtResource("8_jj13f")
+
+[node name="CabañaFuego2XIzquierda" type="Sprite2D" parent="."]
+position = Vector2(261, 470)
+scale = Vector2(3.98, 4.94)
+texture = ExtResource("9_4rc15")
+
+[node name="CabañaFuego3XArriba" type="Sprite2D" parent="."]
+position = Vector2(153, 412)
+scale = Vector2(3.54, 4.5)
+texture = ExtResource("10_sxdod")
