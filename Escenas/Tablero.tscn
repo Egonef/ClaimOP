@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://s2lvrudyiweo"]
+[gd_scene load_steps=15 format=3 uid="uid://s2lvrudyiweo"]
 
 [ext_resource type="Script" path="res://Scripts/crearCartasAMano.gd" id="1_q3mt7"]
 [ext_resource type="PackedScene" uid="uid://r1u135485j7q" path="res://Escenas/zona_mano.tscn" id="2_hqu3n"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bhb3h8imnf8rf" path="res://Sprites general/Cabaña fuego2 x izquierda.png" id="9_4rc15"]
 [ext_resource type="Texture2D" uid="uid://bwl7v57vmvl01" path="res://Sprites general/Humo2.png" id="9_a0one"]
 [ext_resource type="Texture2D" uid="uid://dpd3dk8j41275" path="res://Sprites general/Cabaña fuego3 x arriba.png" id="10_sxdod"]
+[ext_resource type="Texture2D" uid="uid://c06rci322l5bb" path="res://Sprites general/Tumba.png" id="11_cj5fm"]
 
 [sub_resource type="Curve" id="Curve_h0tt4"]
 min_value = 1.0
@@ -90,3 +91,19 @@ texture = ExtResource("9_4rc15")
 position = Vector2(153, 412)
 scale = Vector2(3.54, 4.5)
 texture = ExtResource("10_sxdod")
+
+[node name="Tumba" type="Sprite2D" parent="."]
+position = Vector2(194, 124)
+texture = ExtResource("11_cj5fm")
+
+[node name="Tumba2" type="Sprite2D" parent="."]
+position = Vector2(155, 123)
+texture = ExtResource("11_cj5fm")
+
+[node name="Tumba3" type="Sprite2D" parent="."]
+position = Vector2(230, 124)
+texture = ExtResource("11_cj5fm")
+
+[node name="Tumba4" type="Sprite2D" parent="."]
+position = Vector2(98, 125)
+texture = ExtResource("11_cj5fm")
