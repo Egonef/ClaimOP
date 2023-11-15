@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://s2lvrudyiweo"]
+[gd_scene load_steps=26 format=3 uid="uid://s2lvrudyiweo"]
 
 [ext_resource type="Script" path="res://Scripts/crearCartasAMano.gd" id="1_q3mt7"]
 [ext_resource type="PackedScene" uid="uid://r1u135485j7q" path="res://Escenas/zona_mano.tscn" id="2_hqu3n"]
@@ -12,6 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://dc3lssqqdr470" path="res://Sprites general/Cabaña central upscaled.png" id="8_tw5wg"]
 [ext_resource type="Texture2D" uid="uid://bwl7v57vmvl01" path="res://Sprites general/Humo2.png" id="9_a0one"]
 [ext_resource type="Texture2D" uid="uid://c06rci322l5bb" path="res://Sprites general/Tumba.png" id="11_cj5fm"]
+[ext_resource type="Texture2D" uid="uid://do7b8nbnkk7sk" path="res://Sprites general/Goblin 0.jpg" id="13_ecto5"]
+[ext_resource type="Texture2D" uid="uid://dum37vucmux6m" path="res://Sprites general/Goblin 1.jpg" id="14_u8jfa"]
+[ext_resource type="Texture2D" uid="uid://da4bchmm7dqdg" path="res://Sprites general/Goblin 2.jpg" id="15_l8l37"]
+[ext_resource type="Texture2D" uid="uid://ndb76hj3heny" path="res://Sprites general/Goblin 3.jpg" id="16_oj2pp"]
+[ext_resource type="Texture2D" uid="uid://cn0g5eu5hn22u" path="res://Sprites general/Goblin 4.jpg" id="17_k2xn7"]
+[ext_resource type="Texture2D" uid="uid://dkj2xvtua4ls" path="res://Sprites general/Goblin 8.jpg" id="18_vcrgs"]
+[ext_resource type="Texture2D" uid="uid://cnjwrnjlk2pmf" path="res://Sprites general/Goblin 9.jpg" id="19_6ub30"]
+[ext_resource type="Texture2D" uid="uid://bs7sly3fsvent" path="res://Sprites general/Particulitas hadas.png" id="20_2vkbw"]
 
 [sub_resource type="Animation" id="Animation_aw7ag"]
 resource_name = "iluminado"
@@ -137,3 +145,51 @@ texture = ExtResource("11_cj5fm")
 [node name="Tumba4" type="Sprite2D" parent="."]
 position = Vector2(98, 125)
 texture = ExtResource("11_cj5fm")
+
+[node name="Goblin0" type="Sprite2D" parent="."]
+position = Vector2(340, -66)
+texture = ExtResource("13_ecto5")
+
+[node name="Goblin1" type="Sprite2D" parent="."]
+position = Vector2(480, -69)
+texture = ExtResource("14_u8jfa")
+
+[node name="Goblin2" type="Sprite2D" parent="."]
+position = Vector2(559, -61)
+texture = ExtResource("15_l8l37")
+
+[node name="Goblin3" type="Sprite2D" parent="."]
+position = Vector2(663, -62)
+texture = ExtResource("16_oj2pp")
+
+[node name="Goblin4" type="Sprite2D" parent="."]
+position = Vector2(769, -67)
+texture = ExtResource("17_k2xn7")
+
+[node name="Goblin8" type="Sprite2D" parent="."]
+position = Vector2(861, -42)
+texture = ExtResource("18_vcrgs")
+
+[node name="Goblin9" type="Sprite2D" parent="."]
+position = Vector2(965, -46)
+texture = ExtResource("19_6ub30")
+
+[node name="ParticulitasHadas" type="Sprite2D" parent="."]
+position = Vector2(1018, 129)
+scale = Vector2(0.484375, 0.609375)
+texture = ExtResource("20_2vkbw")
+
+[node name="ParticulitasHadas2" type="Sprite2D" parent="."]
+position = Vector2(1048, 99)
+scale = Vector2(0.484375, 0.71875)
+texture = ExtResource("20_2vkbw")
+
+[node name="ParticulitasHadas3" type="Sprite2D" parent="."]
+position = Vector2(1014, 59.5)
+scale = Vector2(0.40625, 0.484375)
+texture = ExtResource("20_2vkbw")
+
+[node name="ParticulitasHadas4" type="Sprite2D" parent="."]
+position = Vector2(983, 103)
+scale = Vector2(0.46875, 0.53125)
+texture = ExtResource("20_2vkbw")
