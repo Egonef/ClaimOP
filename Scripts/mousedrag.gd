@@ -8,8 +8,8 @@ var ypos = 599
 var myhandpos = 0
 # Determina si la carta ya ha sido colocada o no
 var colocada = false
-
-
+# Variable pa saber si la he soltao en el medio
+var soltarMedio = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,7 +27,11 @@ func _process(delta):
 				scale.x = 2
 				scale.y = 2
 	else:
-		xlock = true
+		if(position.x > 555 and position.x < 635 and position.y > 370 and position.y < 450):
+			soltarMedio = true
+			print("Posicion valida para soltar")
+		else:
+			xlock = true
 		position.y = ypos
 		scale.x = 1
 		scale.y = 1
@@ -44,7 +48,10 @@ func _process(delta):
 				colocada = true
 		position.x = myhandpos
 
-
+	if (soltarMedio == true):
+		position.x = 595
+		position.y = 410
+		soltarMedio = false
 
 
 
