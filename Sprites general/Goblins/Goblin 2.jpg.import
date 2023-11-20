@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://da4bchmm7dqdg"
-path="res://.godot/imported/Goblin 2.jpg-d6bd489194fe3c61bbad9cedcfe0dd8c.ctex"
+path="res://.godot/imported/Goblin 2.jpg-b4c8f6066dfb82e9fcdb1f5b524fdd44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites general/Goblin 2.jpg"
-dest_files=["res://.godot/imported/Goblin 2.jpg-d6bd489194fe3c61bbad9cedcfe0dd8c.ctex"]
+source_file="res://Sprites general/Goblins/Goblin 2.jpg"
+dest_files=["res://.godot/imported/Goblin 2.jpg-b4c8f6066dfb82e9fcdb1f5b524fdd44.ctex"]
 
 [params]
 
