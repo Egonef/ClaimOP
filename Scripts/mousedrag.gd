@@ -10,36 +10,46 @@ var myhandpos = 0
 var colocada = false
 # Variable pa saber si la he soltao en el medio
 var soltarMedio = false
+# Variable para controlar que no se coja mas de una carta a la vez
+var onelock = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Carta creada")
 	get_node("/root/Tablero/Game Logic/ZonaMano").vectorPosiciones.append({"xposition": get_node("/root/Tablero/Game Logic/ZonaMano").position.x,"ocupado": false,})
 	GlobalSignals.locatespot.emit()
-	z_index = 1
+	z_index = 3
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("Left-click"):
+	if (Input.is_action_pressed("Left-click") and onelock == false):
 		xlock = false
 		if (get_local_mouse_position().x > -40 and get_local_mouse_position().x < 40 and get_local_mouse_position().y < 40 and get_local_mouse_position().y > -40):
-				position = get_global_mouse_position()
-				scale.x = 2
-				scale.y = 2
+			position = get_global_mouse_position()
+			scale.x = 2
+			scale.y = 2
+			z_index = 4
+		else:
+			onelock = true
+			
 	else:
+		if (Input.is_action_just_released("Left-click")):
+			onelock = false
+		z_index = 3
 		if(position.x > 555 and position.x < 635 and position.y > 370 and position.y < 450):
 			soltarMedio = true
 			print("Posicion valida para soltar")
 		else:
+			
 			xlock = true
-		position.y = ypos
-		scale.x = 1
-		scale.y = 1
+			position.y = ypos
+			scale.x = 1
+			scale.y = 1
 		if (get_local_mouse_position().x > -40 and get_local_mouse_position().x < 40 and get_local_mouse_position().y < 40 and get_local_mouse_position().y > -40):
 				scale.x = 1.5
 				scale.y = 1.5
-	
+		
 	
 	if (xlock == true):
 		for n in get_node("/root/Tablero/Game Logic/ZonaMano").possize:
