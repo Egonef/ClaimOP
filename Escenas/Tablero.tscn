@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://s2lvrudyiweo"]
+[gd_scene load_steps=21 format=3 uid="uid://s2lvrudyiweo"]
 
 [ext_resource type="Script" path="res://Scripts/crearCartasAMano.gd" id="1_q3mt7"]
 [ext_resource type="PackedScene" uid="uid://r1u135485j7q" path="res://Escenas/zona_mano.tscn" id="2_hqu3n"]
@@ -36,6 +36,15 @@ _data = {
 "iluminado": SubResource("Animation_aw7ag")
 }
 
+[sub_resource type="Gradient" id="Gradient_wfp8b"]
+offsets = PackedFloat32Array(0, 0.8)
+colors = PackedColorArray(0.513733, 0.532639, 0.215773, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5q51b"]
+gradient = SubResource("Gradient_wfp8b")
+fill = 1
+fill_from = Vector2(0.509202, 0.47546)
+
 [sub_resource type="Curve" id="Curve_h0tt4"]
 min_value = 1.0
 max_value = 3.0
@@ -61,10 +70,15 @@ position = Vector2(181, 589)
 [node name="Carta" parent="." instance=ExtResource("3_ta58p")]
 z_index = 1
 
-[node name="Carta2" parent="." instance=ExtResource("3_ta58p")]
-position = Vector2(532, 311)
-
 [node name="Visuals" type="Node2D" parent="."]
+
+[node name="Light" type="Node2D" parent="Visuals"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Visuals/Light"]
+color = Color(0.541176, 0.541176, 0.541176, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Visuals/Light"]
+enabled = false
 
 [node name="dibujotablero" type="Sprite2D" parent="Visuals"]
 position = Vector2(575.5, 324.5)
@@ -81,15 +95,33 @@ libraries = {
 "": SubResource("AnimationLibrary_05rpx")
 }
 
+[node name="PointLight2D" type="PointLight2D" parent="Visuals/CabañaDerechaUpscaled"]
+position = Vector2(-1.09401, 19.252)
+scale = Vector2(0.396147, 0.500579)
+energy = 1.75
+texture = SubResource("GradientTexture2D_5q51b")
+
 [node name="CabañaIzquierdaUpscaled" type="Sprite2D" parent="Visuals"]
 position = Vector2(49, 451)
 scale = Vector2(1.83594, 1.91406)
 texture = ExtResource("6_ccxpj")
 
+[node name="PointLight2D" type="PointLight2D" parent="Visuals/CabañaIzquierdaUpscaled"]
+position = Vector2(0.544679, 18.8082)
+scale = Vector2(0.396147, 0.500579)
+energy = 1.75
+texture = SubResource("GradientTexture2D_5q51b")
+
 [node name="CabañaCentralUpscaled" type="Sprite2D" parent="Visuals"]
 position = Vector2(145, 378)
 scale = Vector2(1.9375, 1.90625)
 texture = ExtResource("8_tw5wg")
+
+[node name="PointLight2D" type="PointLight2D" parent="Visuals/CabañaCentralUpscaled"]
+position = Vector2(0.51613, 19.4098)
+scale = Vector2(0.396147, 0.500579)
+energy = 1.75
+texture = SubResource("GradientTexture2D_5q51b")
 
 [node name="Hoguera2Perspectiva" type="Sprite2D" parent="Visuals"]
 position = Vector2(144, 490)
@@ -127,6 +159,11 @@ gravity = Vector2(0, -1)
 scale_amount_min = 1.5
 scale_amount_max = 3.0
 color_ramp = SubResource("Gradient_0bhxw")
+
+[node name="PointLight2D" type="PointLight2D" parent="Visuals/Hoguera2Perspectiva"]
+position = Vector2(0.688171, 0)
+scale = Vector2(2.42236, 2.3814)
+texture = SubResource("GradientTexture2D_5q51b")
 
 [node name="Tumba" type="Sprite2D" parent="Visuals"]
 position = Vector2(194, 124)
