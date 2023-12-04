@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://s2lvrudyiweo"]
+[gd_scene load_steps=19 format=3 uid="uid://s2lvrudyiweo"]
 
 [ext_resource type="Script" path="res://Scripts/crearCartasAMano.gd" id="1_q3mt7"]
 [ext_resource type="PackedScene" uid="uid://r1u135485j7q" path="res://Escenas/zona_mano.tscn" id="2_hqu3n"]
@@ -12,13 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dc3lssqqdr470" path="res://Sprites general/Cabaña central upscaled.png" id="8_tw5wg"]
 [ext_resource type="Texture2D" uid="uid://bwl7v57vmvl01" path="res://Sprites general/Humo2.png" id="9_a0one"]
 [ext_resource type="Texture2D" uid="uid://c06rci322l5bb" path="res://Sprites general/Tumba.png" id="11_cj5fm"]
-[ext_resource type="Texture2D" uid="uid://do7b8nbnkk7sk" path="res://Sprites general/Goblins/Goblin 0.jpg" id="13_ecto5"]
-[ext_resource type="Texture2D" uid="uid://dum37vucmux6m" path="res://Sprites general/Goblins/Goblin 1.jpg" id="14_u8jfa"]
-[ext_resource type="Texture2D" uid="uid://da4bchmm7dqdg" path="res://Sprites general/Goblins/Goblin 2.jpg" id="15_l8l37"]
-[ext_resource type="Texture2D" uid="uid://ndb76hj3heny" path="res://Sprites general/Goblins/Goblin 3.jpg" id="16_oj2pp"]
-[ext_resource type="Texture2D" uid="uid://cn0g5eu5hn22u" path="res://Sprites general/Goblins/Goblin 4.jpg" id="17_k2xn7"]
-[ext_resource type="Texture2D" uid="uid://dkj2xvtua4ls" path="res://Sprites general/Goblins/Goblin 8.jpg" id="18_vcrgs"]
-[ext_resource type="Texture2D" uid="uid://cnjwrnjlk2pmf" path="res://Sprites general/Goblins/Goblin 9.jpg" id="19_6ub30"]
 [ext_resource type="Texture2D" uid="uid://bs7sly3fsvent" path="res://Sprites general/Particulitas hadas.png" id="20_2vkbw"]
 
 [sub_resource type="Animation" id="Animation_aw7ag"]
@@ -60,45 +53,50 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.713333, 1, 1, 1, 0)
 [node name="Tablero" type="Node2D"]
 script = ExtResource("1_q3mt7")
 
-[node name="ZonaMano" parent="." instance=ExtResource("2_hqu3n")]
+[node name="Game Logic" type="Node2D" parent="."]
+
+[node name="ZonaMano" parent="Game Logic" instance=ExtResource("2_hqu3n")]
 position = Vector2(181, 589)
 
-[node name="dibujotablero" type="Sprite2D" parent="."]
-position = Vector2(575.5, 324.5)
-scale = Vector2(1.99826, 1.99691)
-texture = ExtResource("3_7xbuj")
-
 [node name="Carta" parent="." instance=ExtResource("3_ta58p")]
+z_index = 1
 
 [node name="Carta2" parent="." instance=ExtResource("3_ta58p")]
 position = Vector2(532, 311)
 
-[node name="CabañaDerechaUpscaled" type="Sprite2D" parent="."]
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="dibujotablero" type="Sprite2D" parent="Visuals"]
+position = Vector2(575.5, 324.5)
+scale = Vector2(1.99826, 1.99691)
+texture = ExtResource("3_7xbuj")
+
+[node name="CabañaDerechaUpscaled" type="Sprite2D" parent="Visuals"]
 position = Vector2(243, 449)
 scale = Vector2(1.82813, 1.92188)
 texture = ExtResource("5_cliw2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CabañaDerechaUpscaled"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visuals/CabañaDerechaUpscaled"]
 libraries = {
 "": SubResource("AnimationLibrary_05rpx")
 }
 
-[node name="CabañaIzquierdaUpscaled" type="Sprite2D" parent="."]
+[node name="CabañaIzquierdaUpscaled" type="Sprite2D" parent="Visuals"]
 position = Vector2(49, 451)
 scale = Vector2(1.83594, 1.91406)
 texture = ExtResource("6_ccxpj")
 
-[node name="CabañaCentralUpscaled" type="Sprite2D" parent="."]
+[node name="CabañaCentralUpscaled" type="Sprite2D" parent="Visuals"]
 position = Vector2(145, 378)
 scale = Vector2(1.9375, 1.90625)
 texture = ExtResource("8_tw5wg")
 
-[node name="Hoguera2Perspectiva" type="Sprite2D" parent="."]
+[node name="Hoguera2Perspectiva" type="Sprite2D" parent="Visuals"]
 position = Vector2(144, 490)
 scale = Vector2(1.45313, 1.34375)
 texture = ExtResource("7_5c7vr")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Hoguera2Perspectiva"]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Visuals/Hoguera2Perspectiva"]
 z_index = 2
 position = Vector2(0, -2.69769)
 scale = Vector2(0.930108, 1.02326)
@@ -115,7 +113,7 @@ linear_accel_max = -2.02
 scale_amount_curve = SubResource("Curve_h0tt4")
 color_ramp = SubResource("Gradient_vl4vg")
 
-[node name="CPUParticles2D2" type="CPUParticles2D" parent="Hoguera2Perspectiva"]
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Visuals/Hoguera2Perspectiva"]
 z_index = 1
 position = Vector2(0, -3.72094)
 scale = Vector2(0.930108, 1.02326)
@@ -130,66 +128,38 @@ scale_amount_min = 1.5
 scale_amount_max = 3.0
 color_ramp = SubResource("Gradient_0bhxw")
 
-[node name="Tumba" type="Sprite2D" parent="."]
+[node name="Tumba" type="Sprite2D" parent="Visuals"]
 position = Vector2(194, 124)
 texture = ExtResource("11_cj5fm")
 
-[node name="Tumba2" type="Sprite2D" parent="."]
+[node name="Tumba2" type="Sprite2D" parent="Visuals"]
 position = Vector2(155, 123)
 texture = ExtResource("11_cj5fm")
 
-[node name="Tumba3" type="Sprite2D" parent="."]
+[node name="Tumba3" type="Sprite2D" parent="Visuals"]
 position = Vector2(230, 124)
 texture = ExtResource("11_cj5fm")
 
-[node name="Tumba4" type="Sprite2D" parent="."]
+[node name="Tumba4" type="Sprite2D" parent="Visuals"]
 position = Vector2(98, 125)
 texture = ExtResource("11_cj5fm")
 
-[node name="Goblin0" type="Sprite2D" parent="."]
-position = Vector2(340, -66)
-texture = ExtResource("13_ecto5")
-
-[node name="Goblin1" type="Sprite2D" parent="."]
-position = Vector2(480, -69)
-texture = ExtResource("14_u8jfa")
-
-[node name="Goblin2" type="Sprite2D" parent="."]
-position = Vector2(559, -61)
-texture = ExtResource("15_l8l37")
-
-[node name="Goblin3" type="Sprite2D" parent="."]
-position = Vector2(663, -62)
-texture = ExtResource("16_oj2pp")
-
-[node name="Goblin4" type="Sprite2D" parent="."]
-position = Vector2(769, -67)
-texture = ExtResource("17_k2xn7")
-
-[node name="Goblin8" type="Sprite2D" parent="."]
-position = Vector2(861, -42)
-texture = ExtResource("18_vcrgs")
-
-[node name="Goblin9" type="Sprite2D" parent="."]
-position = Vector2(965, -46)
-texture = ExtResource("19_6ub30")
-
-[node name="ParticulitasHadas" type="Sprite2D" parent="."]
+[node name="ParticulitasHadas" type="Sprite2D" parent="Visuals"]
 position = Vector2(1018, 129)
 scale = Vector2(0.484375, 0.609375)
 texture = ExtResource("20_2vkbw")
 
-[node name="ParticulitasHadas2" type="Sprite2D" parent="."]
+[node name="ParticulitasHadas2" type="Sprite2D" parent="Visuals"]
 position = Vector2(1048, 99)
 scale = Vector2(0.484375, 0.71875)
 texture = ExtResource("20_2vkbw")
 
-[node name="ParticulitasHadas3" type="Sprite2D" parent="."]
+[node name="ParticulitasHadas3" type="Sprite2D" parent="Visuals"]
 position = Vector2(1014, 59.5)
 scale = Vector2(0.40625, 0.484375)
 texture = ExtResource("20_2vkbw")
 
-[node name="ParticulitasHadas4" type="Sprite2D" parent="."]
+[node name="ParticulitasHadas4" type="Sprite2D" parent="Visuals"]
 position = Vector2(983, 103)
 scale = Vector2(0.46875, 0.53125)
 texture = ExtResource("20_2vkbw")

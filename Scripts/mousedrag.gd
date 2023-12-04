@@ -14,8 +14,9 @@ var soltarMedio = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Carta creada")
-	get_node("/root/Tablero/ZonaMano").vectorPosiciones.append({"xposition": get_node("/root/Tablero/ZonaMano").position.x,"ocupado": false,})
+	get_node("/root/Tablero/Game Logic/ZonaMano").vectorPosiciones.append({"xposition": get_node("/root/Tablero/Game Logic/ZonaMano").position.x,"ocupado": false,})
 	GlobalSignals.locatespot.emit()
+	z_index = 1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,10 +42,10 @@ func _process(delta):
 	
 	
 	if (xlock == true):
-		for n in get_node("/root/Tablero/ZonaMano").possize:
-			if (position.x != get_node("/root/Tablero/ZonaMano").vectorPosiciones[n].xposition and get_node("/root/Tablero/ZonaMano").vectorPosiciones[n].ocupado == false and colocada == false):
-				myhandpos = get_node("/root/Tablero/ZonaMano").vectorPosiciones[n].xposition
-				get_node("/root/Tablero/ZonaMano").vectorPosiciones[n].ocupado = true
+		for n in get_node("/root/Tablero/Game Logic/ZonaMano").possize:
+			if (position.x != get_node("/root/Tablero/Game Logic/ZonaMano").vectorPosiciones[n].xposition and get_node("/root/Tablero/Game Logic/ZonaMano").vectorPosiciones[n].ocupado == false and colocada == false):
+				myhandpos = get_node("/root/Tablero/Game Logic/ZonaMano").vectorPosiciones[n].xposition
+				get_node("/root/Tablero/Game Logic/ZonaMano").vectorPosiciones[n].ocupado = true
 				colocada = true
 		position.x = myhandpos
 
