@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://s2lvrudyiweo"]
+[gd_scene load_steps=24 format=3 uid="uid://s2lvrudyiweo"]
 
 [ext_resource type="Script" path="res://Scripts/crearCartasAMano.gd" id="1_q3mt7"]
 [ext_resource type="PackedScene" uid="uid://r1u135485j7q" path="res://Escenas/zona_mano.tscn" id="2_hqu3n"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dc3lssqqdr470" path="res://Sprites general/Cabaña central upscaled.png" id="8_tw5wg"]
 [ext_resource type="Texture2D" uid="uid://bwl7v57vmvl01" path="res://Sprites general/Humo2.png" id="9_a0one"]
 [ext_resource type="Texture2D" uid="uid://c06rci322l5bb" path="res://Sprites general/Tumba.png" id="11_cj5fm"]
+[ext_resource type="Texture2D" uid="uid://buba40qawktml" path="res://Sprites general/estrella1.png" id="14_5ef17"]
 [ext_resource type="Texture2D" uid="uid://bs7sly3fsvent" path="res://Sprites general/Particulitas hadas.png" id="20_2vkbw"]
 
 [sub_resource type="Animation" id="Animation_aw7ag"]
@@ -58,6 +59,15 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 [sub_resource type="Gradient" id="Gradient_0bhxw"]
 offsets = PackedFloat32Array(0, 0.926667, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.713333, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_xr83h"]
+offsets = PackedFloat32Array(0, 0.396104)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ufoug"]
+gradient = SubResource("Gradient_xr83h")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Tablero" type="Node2D"]
 script = ExtResource("1_q3mt7")
@@ -211,3 +221,24 @@ texture = ExtResource("20_2vkbw")
 position = Vector2(983, 103)
 scale = Vector2(0.46875, 0.53125)
 texture = ExtResource("20_2vkbw")
+
+[node name="Estrella1" type="Sprite2D" parent="Visuals"]
+position = Vector2(955, 158)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("14_5ef17")
+
+[node name="PointLight2D" type="PointLight2D" parent="Visuals/Estrella1"]
+z_index = -2
+energy = 0.4
+texture = SubResource("GradientTexture2D_ufoug")
+
+[node name="Estrella2" type="Sprite2D" parent="Visuals"]
+position = Vector2(976, 139)
+rotation = 2.03505
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("14_5ef17")
+
+[node name="PointLight2D" type="PointLight2D" parent="Visuals/Estrella2"]
+z_index = -2
+energy = 0.4
+texture = SubResource("GradientTexture2D_ufoug")
