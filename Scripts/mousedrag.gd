@@ -51,6 +51,7 @@ func _process(delta):
 				scale.y = 1.5
 		
 	
+	
 	if (xlock == true):
 		for n in get_node("/root/Tablero/Game Logic/ZonaMano").possize:
 			if (position.x != get_node("/root/Tablero/Game Logic/ZonaMano").vectorPosiciones[n].xposition and get_node("/root/Tablero/Game Logic/ZonaMano").vectorPosiciones[n].ocupado == false and colocada == false):
