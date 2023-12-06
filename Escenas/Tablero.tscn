@@ -1,18 +1,22 @@
-[gd_scene load_steps=24 format=3 uid="uid://s2lvrudyiweo"]
+[gd_scene load_steps=31 format=3 uid="uid://s2lvrudyiweo"]
 
-[ext_resource type="Script" path="res://Scripts/crearCartasAMano.gd" id="1_q3mt7"]
 [ext_resource type="PackedScene" uid="uid://r1u135485j7q" path="res://Escenas/zona_mano.tscn" id="2_hqu3n"]
 [ext_resource type="Texture2D" uid="uid://56aqbahq7ank" path="res://Sprites general/terreno standar.jpg" id="3_7xbuj"]
-[ext_resource type="PackedScene" uid="uid://bvqglyljf5v1" path="res://Escenas/carta.tscn" id="3_ta58p"]
+[ext_resource type="Script" path="res://Scripts/gestionMazo.gd" id="3_gvvo6"]
+[ext_resource type="PackedScene" uid="uid://bvqglyljf5v1" path="res://Escenas/cartas/carta.tscn" id="3_ta58p"]
+[ext_resource type="Texture2D" uid="uid://b01rfxbudom2g" path="res://Sprites general/Reverso.png" id="4_a8b7l"]
 [ext_resource type="Texture2D" uid="uid://bvstr8fic5afe" path="res://Sprites general/Cabaña derecha upscaled1.png" id="5_cliw2"]
 [ext_resource type="Texture2D" uid="uid://taq41xqc0tvd" path="res://Sprites general/Cabaña derecha upscaled2.png" id="6_6o08l"]
 [ext_resource type="Texture2D" uid="uid://casu3ufrcx2wo" path="res://Sprites general/Cabaña izquierda upscaled.png" id="6_ccxpj"]
 [ext_resource type="Texture2D" uid="uid://bvjsgqgbbqm0d" path="res://Sprites general/Hoguera2perspectiva.png" id="7_5c7vr"]
+[ext_resource type="PackedScene" uid="uid://c1p0ulqhgkdww" path="res://Escenas/cartas/goblin_0.tscn" id="7_j01nq"]
 [ext_resource type="Texture2D" uid="uid://ccww3mddhk82" path="res://Sprites general/Chispas.png" id="8_bc57f"]
+[ext_resource type="PackedScene" uid="uid://d3jctvachwpdf" path="res://Escenas/cartas/fondoangela.tscn" id="8_dycau"]
 [ext_resource type="Texture2D" uid="uid://dc3lssqqdr470" path="res://Sprites general/Cabaña central upscaled.png" id="8_tw5wg"]
 [ext_resource type="Texture2D" uid="uid://bwl7v57vmvl01" path="res://Sprites general/Humo2.png" id="9_a0one"]
 [ext_resource type="Texture2D" uid="uid://c06rci322l5bb" path="res://Sprites general/Tumba.png" id="11_cj5fm"]
 [ext_resource type="Texture2D" uid="uid://buba40qawktml" path="res://Sprites general/estrella1.png" id="14_5ef17"]
+[ext_resource type="Texture2D" uid="uid://cik6qejkadk82" path="res://Sprites general/fondocarta.png" id="15_5x4ua"]
 [ext_resource type="Texture2D" uid="uid://bs7sly3fsvent" path="res://Sprites general/Particulitas hadas.png" id="20_2vkbw"]
 
 [sub_resource type="Animation" id="Animation_aw7ag"]
@@ -69,24 +73,50 @@ gradient = SubResource("Gradient_xr83h")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="Gradient" id="Gradient_cuo63"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xpkwy"]
+gradient = SubResource("Gradient_cuo63")
+fill = 1
+fill_from = Vector2(0.178899, 0.146789)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xcs5o"]
+polygon = PackedVector2Array(-20, -32.0896, 22.6666, -32.0896, 22.6666, 32.0896, -20.6667, 32.0896, -20.6667, 29.8507, 20.6666, 29.8507, 20.6666, -29.8508, -18.6667, -29.8508, -18.6667, 29.8507, -20.6667, 29.8507)
+
 [node name="Tablero" type="Node2D"]
-script = ExtResource("1_q3mt7")
 
 [node name="Game Logic" type="Node2D" parent="."]
 
 [node name="ZonaMano" parent="Game Logic" instance=ExtResource("2_hqu3n")]
 position = Vector2(181, 589)
 
+[node name="Mazo" type="Node2D" parent="Game Logic"]
+z_index = 5
+position = Vector2(91, 282)
+script = ExtResource("3_gvvo6")
+
+[node name="Reverso" type="Sprite2D" parent="Game Logic/Mazo"]
+z_index = 5
+position = Vector2(1, 1)
+texture = ExtResource("4_a8b7l")
+
 [node name="Carta" parent="." instance=ExtResource("3_ta58p")]
 z_index = 1
-position = Vector2(506, 416)
+position = Vector2(-215, 356)
+
+[node name="goblin0" parent="." instance=ExtResource("7_j01nq")]
+position = Vector2(-127, 350)
+
+[node name="fondoangela" parent="." instance=ExtResource("8_dycau")]
+position = Vector2(-290, 352)
 
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="Light" type="Node2D" parent="Visuals"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Visuals/Light"]
-color = Color(0.509804, 0.509804, 0.509804, 1)
+color = Color(0.54902, 0.54902, 0.54902, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Visuals/Light"]
 enabled = false
@@ -223,7 +253,7 @@ scale = Vector2(0.46875, 0.53125)
 texture = ExtResource("20_2vkbw")
 
 [node name="Estrella1" type="Sprite2D" parent="Visuals"]
-position = Vector2(955, 158)
+position = Vector2(961, 158)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("14_5ef17")
 
@@ -242,3 +272,18 @@ texture = ExtResource("14_5ef17")
 z_index = -2
 energy = 0.4
 texture = SubResource("GradientTexture2D_ufoug")
+
+[node name="Fondocarta" type="Sprite2D" parent="Visuals"]
+position = Vector2(-105, 128)
+scale = Vector2(1.5, 1.34)
+texture = ExtResource("15_5x4ua")
+
+[node name="PointLight2D" type="PointLight2D" parent="Visuals/Fondocarta"]
+position = Vector2(2.66667, -5.72205e-06)
+scale = Vector2(0.679987, 1)
+color = Color(0.960784, 0.870588, 0.65098, 1)
+texture = SubResource("GradientTexture2D_xpkwy")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Visuals/Fondocarta"]
+position = Vector2(1.33333, -5.72205e-06)
+occluder = SubResource("OccluderPolygon2D_xcs5o")

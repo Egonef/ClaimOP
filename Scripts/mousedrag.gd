@@ -1,5 +1,7 @@
-extends StaticBody2D
+extends Node2D
 
+# Incrementar cantidad de cartas 
+@onready var cont = get_node("/root/GlobalSignals").contmano
 # Variable para retener el reposicionamiento cuando coges la carta
 var xlock = true
 # Altura a la que se encuentra la mano
@@ -16,9 +18,10 @@ var onelock = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Carta creada")
+	get_node("/root/GlobalSignals").contmano += 1
 	get_node("/root/Tablero/Game Logic/ZonaMano").vectorPosiciones.append({"xposition": get_node("/root/Tablero/Game Logic/ZonaMano").position.x,"ocupado": false,})
 	GlobalSignals.locatespot.emit()
-	z_index = 3
+	z_index = 5
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

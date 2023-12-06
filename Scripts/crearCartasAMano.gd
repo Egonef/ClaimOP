@@ -1,8 +1,8 @@
 extends Node2D
 
-var cartaIns = preload("res://Escenas/carta.tscn")
+var cartaIns = preload("res://Escenas/cartas/carta.tscn")
 
-var cont = 0
+@onready var cont = get_node("/root/GlobalSignals").contmano
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +11,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (cont < 13):
-		cont += 1 # cont = cont + 1
-		print("Contador: ", cont)
-		add_child(cartaIns.instantiate())
+	pass
