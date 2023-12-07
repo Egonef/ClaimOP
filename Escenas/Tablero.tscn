@@ -1,17 +1,14 @@
-[gd_scene load_steps=31 format=3 uid="uid://s2lvrudyiweo"]
+[gd_scene load_steps=28 format=3 uid="uid://s2lvrudyiweo"]
 
 [ext_resource type="PackedScene" uid="uid://r1u135485j7q" path="res://Escenas/zona_mano.tscn" id="2_hqu3n"]
 [ext_resource type="Texture2D" uid="uid://56aqbahq7ank" path="res://Sprites general/terreno standar.jpg" id="3_7xbuj"]
 [ext_resource type="Script" path="res://Scripts/gestionMazo.gd" id="3_gvvo6"]
-[ext_resource type="PackedScene" uid="uid://bvqglyljf5v1" path="res://Escenas/cartas/carta.tscn" id="3_ta58p"]
 [ext_resource type="Texture2D" uid="uid://b01rfxbudom2g" path="res://Sprites general/Reverso.png" id="4_a8b7l"]
 [ext_resource type="Texture2D" uid="uid://bvstr8fic5afe" path="res://Sprites general/Cabaña derecha upscaled1.png" id="5_cliw2"]
 [ext_resource type="Texture2D" uid="uid://taq41xqc0tvd" path="res://Sprites general/Cabaña derecha upscaled2.png" id="6_6o08l"]
 [ext_resource type="Texture2D" uid="uid://casu3ufrcx2wo" path="res://Sprites general/Cabaña izquierda upscaled.png" id="6_ccxpj"]
 [ext_resource type="Texture2D" uid="uid://bvjsgqgbbqm0d" path="res://Sprites general/Hoguera2perspectiva.png" id="7_5c7vr"]
-[ext_resource type="PackedScene" uid="uid://c1p0ulqhgkdww" path="res://Escenas/cartas/goblin_0.tscn" id="7_j01nq"]
 [ext_resource type="Texture2D" uid="uid://ccww3mddhk82" path="res://Sprites general/Chispas.png" id="8_bc57f"]
-[ext_resource type="PackedScene" uid="uid://d3jctvachwpdf" path="res://Escenas/cartas/fondoangela.tscn" id="8_dycau"]
 [ext_resource type="Texture2D" uid="uid://dc3lssqqdr470" path="res://Sprites general/Cabaña central upscaled.png" id="8_tw5wg"]
 [ext_resource type="Texture2D" uid="uid://bwl7v57vmvl01" path="res://Sprites general/Humo2.png" id="9_a0one"]
 [ext_resource type="Texture2D" uid="uid://c06rci322l5bb" path="res://Sprites general/Tumba.png" id="11_cj5fm"]
@@ -100,16 +97,6 @@ script = ExtResource("3_gvvo6")
 z_index = 5
 position = Vector2(1, 1)
 texture = ExtResource("4_a8b7l")
-
-[node name="Carta" parent="." instance=ExtResource("3_ta58p")]
-z_index = 1
-position = Vector2(-215, 356)
-
-[node name="goblin0" parent="." instance=ExtResource("7_j01nq")]
-position = Vector2(-127, 350)
-
-[node name="fondoangela" parent="." instance=ExtResource("8_dycau")]
-position = Vector2(-290, 352)
 
 [node name="Visuals" type="Node2D" parent="."]
 
