@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://0adj5beljrsf"]
+[gd_scene load_steps=3 format=3 uid="uid://ws1q4w8ug3ik"]
 
 [ext_resource type="Script" path="res://Scripts/mousedrag.gd" id="1_levuf"]
 [ext_resource type="Texture2D" uid="uid://cpc3u564yu5pv" path="res://Sprites general/Goblins/Goblin 5.jpg" id="2_vu0s7"]
