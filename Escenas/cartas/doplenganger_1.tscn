@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://oek87dds04a5"]
+
+[ext_resource type="Script" path="res://Scripts/mousedrag.gd" id="1_el8t0"]
+[ext_resource type="Texture2D" uid="uid://c6bmgkkc0ownd" path="res://Sprites general/Goblins/Doplenganger 1.jpg" id="2_n22gx"]
+
+[node name="goblin0" type="Node2D"]
+script = ExtResource("1_el8t0")
+
+[node name="Doplenganger1" type="Sprite2D" parent="."]
+texture = ExtResource("2_n22gx")
