@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx5wvfpp33oox"]
+[gd_scene load_steps=3 format=3 uid="uid://k05asp3sh20j"]
 
-[ext_resource type="Script" path="res://Scripts/mousedrag.gd" id="1_iyjs2"]
-[ext_resource type="Texture2D" uid="uid://dqb5w6vy0d7nd" path="res://Sprites general/Dopleguanger 0.jpg" id="2_e6qtf"]
+[ext_resource type="Script" path="res://Scripts/mousedrag.gd" id="1_srjef"]
+[ext_resource type="Texture2D" uid="uid://dum37vucmux6m" path="res://Sprites general/Goblins/Goblin 1.jpg" id="2_50cwb"]
 
 [node name="goblin0" type="Node2D"]
-script = ExtResource("1_iyjs2")
+script = ExtResource("1_srjef")
 
-[node name="Dopleguanger0" type="Sprite2D" parent="."]
-texture = ExtResource("2_e6qtf")
+[node name="Goblin1" type="Sprite2D" parent="."]
+texture = ExtResource("2_50cwb")
