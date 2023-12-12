@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://0adj5beljrsf"]
+
+[ext_resource type="Script" path="res://Scripts/mousedrag.gd" id="1_levuf"]
+[ext_resource type="Texture2D" uid="uid://cpc3u564yu5pv" path="res://Sprites general/Goblins/Goblin 5.jpg" id="2_vu0s7"]
+
+[node name="goblin0" type="Node2D"]
+script = ExtResource("1_levuf")
+
+[node name="Goblin5" type="Sprite2D" parent="."]
+texture = ExtResource("2_vu0s7")
