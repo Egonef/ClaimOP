@@ -8,6 +8,7 @@ var peer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	multiplayer.peer_connected.connect(JugadorConectado)
+	multiplayer.peer_connected.connect(saber_id)
 	multiplayer.peer_disconnected.connect(JugadorDesconectado)
 	multiplayer.connected_to_server.connect(JugadorConectadoServer)
 	multiplayer.connection_failed.connect(JugadorDesconectadoServer)
@@ -30,11 +31,21 @@ func JugadorConectadoServer():
 func JugadorDesconectadoServer():
 	print("Conexion fallida con el servidor")
 
+func saber_id(id):
+	if (id == 1):
+		print("Soy el servidor")
+	else:
+		print("Soy el cliente, y mi id es: " + str(id))
+
 @rpc("any_peer","call_local")
 func entrar_en_partida():
 	var escena = load("res://Escenas/Tablero.tscn").instantiate()
 	get_tree().root.add_child(escena)
 	self.visible = false
+ 
+
+
+
 
 func _on_crear_pressed():
 	peer = ENetMultiplayerPeer.new()
