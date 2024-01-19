@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://s2lvrudyiweo"]
+[gd_scene load_steps=29 format=3 uid="uid://s2lvrudyiweo"]
 
 [ext_resource type="PackedScene" uid="uid://r1u135485j7q" path="res://Escenas/zona_mano.tscn" id="2_hqu3n"]
 [ext_resource type="Texture2D" uid="uid://56aqbahq7ank" path="res://Sprites general/terreno standar.jpg" id="3_7xbuj"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dc3lssqqdr470" path="res://Sprites general/Cabaña central upscaled.png" id="8_tw5wg"]
 [ext_resource type="Texture2D" uid="uid://bwl7v57vmvl01" path="res://Sprites general/Humo2.png" id="9_a0one"]
 [ext_resource type="Texture2D" uid="uid://c06rci322l5bb" path="res://Sprites general/Tumba.png" id="11_cj5fm"]
+[ext_resource type="Script" path="res://Scripts/changeLight.gd" id="12_mdxw1"]
 [ext_resource type="Texture2D" uid="uid://buba40qawktml" path="res://Sprites general/estrella1.png" id="14_5ef17"]
 [ext_resource type="Texture2D" uid="uid://cik6qejkadk82" path="res://Sprites general/fondocarta.png" id="15_5x4ua"]
 [ext_resource type="Texture2D" uid="uid://bs7sly3fsvent" path="res://Sprites general/Particulitas hadas.png" id="20_2vkbw"]
@@ -202,6 +203,7 @@ scale = Vector2(2.42236, 2.3814)
 color = Color(0.705882, 0.32549, 0.0666667, 1)
 range_z_max = 2
 texture = SubResource("GradientTexture2D_5q51b")
+script = ExtResource("12_mdxw1")
 
 [node name="Tumba" type="Sprite2D" parent="Visuals"]
 position = Vector2(194, 124)

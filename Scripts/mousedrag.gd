@@ -15,6 +15,7 @@ var soltarMedio = false
 # Variable para controlar que no se coja mas de una carta a la vez
 var onelock = false
 
+var prueba = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Carta creada")
@@ -26,6 +27,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	miporonga()
+	
 	if (Input.is_action_pressed("Left-click") and onelock == false):
 		xlock = false
 		if (get_local_mouse_position().x > -40 and get_local_mouse_position().x < 40 and get_local_mouse_position().y < 40 and get_local_mouse_position().y > -40):
@@ -69,5 +72,6 @@ func _process(delta):
 		soltarMedio = false
 
 
-
-	
+func miporonga():
+	prueba = prueba + 1
+	print(prueba)
