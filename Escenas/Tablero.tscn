@@ -107,9 +107,9 @@ texture = ExtResource("4_a8b7l")
 color = Color(0.54902, 0.54902, 0.54902, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Visuals/Light"]
-enabled = false
+z_index = 15
+color = Color(0.0196078, 0.0196078, 0.0196078, 1)
 energy = 0.0
-blend_mode = 1
 
 [node name="dibujotablero" type="Sprite2D" parent="Visuals"]
 position = Vector2(575.5, 324.5)
