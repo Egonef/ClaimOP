@@ -7,7 +7,8 @@ var contmano = 0
 var numcartasHost = 0
 var numcartasClient = 0
 
-
+#Variables para conectar las luces#
+var Luz_Up = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

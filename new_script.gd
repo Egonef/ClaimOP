@@ -1,6 +1,5 @@
 extends Node
 
-var luminosidad = GlobalSignals.Luz_Up 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,7 +8,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	luminosidad = GlobalSignals.Luz_Up 
-	if ( luminosidad > 3):
-		self.color = Color(9,23,12)
-	self.energy = luminosidad
+	pass
