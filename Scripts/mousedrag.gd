@@ -15,7 +15,6 @@ var soltarMedio = false
 # Variable para controlar que no se coja mas de una carta a la vez
 var onelock = false
 
-var prueba_luz = 2
 var prueba = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,7 +27,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	miporonga()
 	
 	if (Input.is_action_pressed("Left-click") and onelock == false):
 		xlock = false
@@ -68,13 +66,10 @@ func _process(delta):
 		position.x = myhandpos
 
 	if (soltarMedio == true):
-		prueba_luz = GlobalSignals.Luz_Up
+		GlobalSignals.Luz_Up = GlobalSignals.Luz_Up + 1
 		position.x = 595
 		position.y = 410
 		soltarMedio = false
 	
 
 
-func miporonga():
-	prueba = prueba + 1
-	print(prueba)

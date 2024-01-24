@@ -1,6 +1,6 @@
 extends Node
 
-var luminosidad = GlobalSignals.Luz_Up 
+var luminosidad = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,3 +13,4 @@ func _process(delta):
 	if ( luminosidad > 3):
 		self.color = Color(9,23,12)
 	self.energy = luminosidad
+	print(self.energy)
