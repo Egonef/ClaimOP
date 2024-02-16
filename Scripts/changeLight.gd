@@ -13,4 +13,4 @@ func _process(delta):
 	if ( luminosidad > 3):
 		self.color = Color(9,23,12)
 	self.energy = luminosidad
-	print(self.energy)
+	#print(self.energy)

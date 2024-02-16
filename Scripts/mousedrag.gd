@@ -18,7 +18,7 @@ var onelock = false
 var prueba = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Carta creada")
+	#print("Carta creada")
 	get_node("/root/GlobalSignals").contmano += 1
 	get_node("/root/Tablero/Game Logic/ZonaMano").vectorPosiciones.append({"xposition": get_node("/root/Tablero/Game Logic/ZonaMano").position.x,"ocupado": false,})
 	GlobalSignals.locatespot.emit()
@@ -66,7 +66,7 @@ func _process(delta):
 		position.x = myhandpos
 
 	if (soltarMedio == true):
-		GlobalSignals.Luz_Up = GlobalSignals.Luz_Up + 1
+		GlobalSignals.Luz_Up = GlobalSignals.Luz_Up + 0.001
 		position.x = 595
 		position.y = 410
 		soltarMedio = false
